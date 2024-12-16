@@ -17,7 +17,7 @@ COPY . /usr/src/homeassistant
 RUN --mount=from=ghcr.io/astral-sh/uv:0.5.8,source=/uv,target=/bin/uv \
     # Required for PyTurboJPEG
     apk add --no-cache libturbojpeg \
-    && uv pip install \
+    && pip install \
         --no-build \
         --no-cache \
         -c /usr/src/homeassistant/homeassistant/package_constraints.txt \

@@ -35,23 +35,23 @@ WORKDIR /usr/src
 COPY requirements.txt homeassistant/
 COPY homeassistant/package_constraints.txt homeassistant/homeassistant/
 RUN \
-    uv pip install \
+    pip install \
         --no-build \
         -r homeassistant/requirements.txt
 
 COPY requirements_all.txt home_assistant_frontend-* home_assistant_intents-* homeassistant/
 RUN \
     if ls homeassistant/home_assistant_*.whl 1> /dev/null 2>&1; then \
-        uv pip install homeassistant/home_assistant_*.whl; \
+        pip install homeassistant/home_assistant_*.whl; \
     fi \
-    && uv pip install \
+    && pip install \
         --no-build \
         -r homeassistant/requirements_all.txt
 
 ## Setup Home Assistant Core
 COPY . homeassistant/
 RUN \
-    uv pip install \
+    pip install \
         -e ./homeassistant \
     && python3 -m compileall \
         homeassistant/homeassistant
@@ -96,7 +96,7 @@ COPY . /usr/src/homeassistant
 RUN --mount=from=ghcr.io/astral-sh/uv:{uv},source=/uv,target=/bin/uv \
     # Required for PyTurboJPEG
     apk add --no-cache libturbojpeg \
-    && uv pip install \
+    && pip install \
         --no-build \
         --no-cache \
         -c /usr/src/homeassistant/homeassistant/package_constraints.txt \

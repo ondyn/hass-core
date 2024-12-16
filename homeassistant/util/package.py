@@ -106,7 +106,6 @@ def install_package(
     args = [
         sys.executable,
         "-m",
-        "uv",
         "pip",
         "install",
         "--quiet",
@@ -138,7 +137,7 @@ def install_package(
         # https://github.com/astral-sh/uv/issues/2077#issuecomment-2150406001
         args += ["--python", sys.executable, "--target", abs_target]
 
-    _LOGGER.debug("Running uv pip command: args=%s", args)
+    _LOGGER.debug("Running pip command: args=%s", args)
     with Popen(
         args,
         stdin=PIPE,

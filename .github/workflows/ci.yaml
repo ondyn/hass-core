@@ -253,7 +253,7 @@ jobs:
           . venv/bin/activate
           python --version
           pip install "$(grep '^uv' < requirements.txt)"
-          uv pip install "$(cat requirements_test.txt | grep pre-commit)"
+          pip install "$(cat requirements_test.txt | grep pre-commit)"
       - name: Restore pre-commit environment from cache
         id: cache-precommit
         uses: actions/cache@v4.2.0
@@ -525,17 +525,17 @@ jobs:
           . venv/bin/activate
           python --version
           pip install "$(grep '^uv' < requirements.txt)"
-          uv pip install -U "pip>=21.3.1" setuptools wheel
-          uv pip install -r requirements.txt
+          pip install -U "pip>=21.3.1" setuptools wheel
+          pip install -r requirements.txt
           python -m script.gen_requirements_all ci
-          uv pip install -r requirements_all_pytest.txt -r requirements_test.txt
-          uv pip install -e . --config-settings editable_mode=compat
+          pip install -r requirements_all_pytest.txt -r requirements_test.txt
+          pip install -e . --config-settings editable_mode=compat
       - name: Dump pip freeze
         run: |
           python -m venv venv
           . venv/bin/activate
           python --version
-          uv pip freeze >> pip_freeze.txt
+          pip freeze >> pip_freeze.txt
       - name: Upload pip_freeze artifact
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -1065,7 +1065,7 @@ jobs:
       - name: Install SQL Python libraries
         run: |
           . venv/bin/activate
-          uv pip install mysqlclient sqlalchemy_utils
+          pip install mysqlclient sqlalchemy_utils
       - name: Compile English translations
         run: |
           . venv/bin/activate
@@ -1194,7 +1194,7 @@ jobs:
       - name: Install SQL Python libraries
         run: |
           . venv/bin/activate
-          uv pip install psycopg2 sqlalchemy_utils
+          pip install psycopg2 sqlalchemy_utils
       - name: Compile English translations
         run: |
           . venv/bin/activate
