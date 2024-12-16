@@ -247,7 +247,7 @@ def install_requirements(integration: Integration, requirements: set[str]) -> bo
         if is_installed:
             continue
 
-        args = ["uv", "pip", "install", "--quiet"]
+        args = ["pip", "install", "--quiet"]
         if install_args:
             args.append(install_args)
         args.append(requirement_arg)

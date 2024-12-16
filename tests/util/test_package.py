@@ -96,7 +96,6 @@ def test_install(
         [
             mock_sys.executable,
             "-m",
-            "uv",
             "pip",
             "install",
             "--quiet",
@@ -126,7 +125,6 @@ def test_install_with_timeout(
         [
             mock_sys.executable,
             "-m",
-            "uv",
             "pip",
             "install",
             "--quiet",
@@ -153,7 +151,6 @@ def test_install_upgrade(mock_popen, mock_env_copy, mock_sys) -> None:
         [
             mock_sys.executable,
             "-m",
-            "uv",
             "pip",
             "install",
             "--quiet",
@@ -195,7 +192,6 @@ def test_install_target(
     args = [
         mock_sys.executable,
         "-m",
-        "uv",
         "pip",
         "install",
         "--quiet",
@@ -240,7 +236,6 @@ def test_install_pip_compatibility_no_workaround(
     args = [
         mock_sys.executable,
         "-m",
-        "uv",
         "pip",
         "install",
         "--quiet",
@@ -273,7 +268,6 @@ def test_install_pip_compatibility_use_workaround(
     args = [
         mock_sys.executable,
         "-m",
-        "uv",
         "pip",
         "install",
         "--quiet",
@@ -319,7 +313,6 @@ def test_install_constraint(mock_popen, mock_env_copy, mock_sys) -> None:
         [
             mock_sys.executable,
             "-m",
-            "uv",
             "pip",
             "install",
             "--quiet",

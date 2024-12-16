@@ -32,7 +32,6 @@ def main() -> int | None:
     requirements = gather_recursive_requirements(args.integration)
 
     cmd = [
-        "uv",
         "pip",
         "install",
         "-c",
