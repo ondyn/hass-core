@@ -113,8 +113,8 @@ def install_package(
         # We need to use unsafe-first-match for custom components
         # which can use a different version of a package than the one
         # we have built the wheel for.
-        "--index-strategy",
-        "unsafe-first-match",
+        # "--index-strategy",
+        # "unsafe-first-match",
     ]
     if timeout:
         env["HTTP_TIMEOUT"] = str(timeout)
