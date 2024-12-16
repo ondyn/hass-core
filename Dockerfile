@@ -12,9 +12,6 @@ ENV \
 
 ARG QEMU_CPU
 
-# Install uv
-RUN pip3 install uv==0.5.8
-
 WORKDIR /usr/src
 
 ## Setup Home Assistant Core dependencies
