@@ -36,6 +36,7 @@ Instead of 'pip install .' you can try 'uv pip install .' Will be much faster, b
 Update to latest version
 ```
 mkdir vpn
+cd vpn
 curl -fsSL https://pkgs.tailscale.com/stable/tailscale_1.78.1_arm64.tgz | tar xzv
 https://pkgs.tailscale.com/stable/tailscale_1.76.1_arm64.tgz
 mv tailscale_1.78.1_arm64/{tailscale,tailscaled} . && chmod 700 {tailscale,tailscaled} && rm -r tailscale_1.78.1_arm64
