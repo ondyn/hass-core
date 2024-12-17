@@ -1,6 +1,6 @@
 # Install HomeAssistant Core on Android phone with root.
 
-'uv' package is remove from original 'core' project. 'uv' is available to install in Termux now (pkg install uv), but 'pip install uv' doesn't work.
+'uv' package removed from original 'core' project. 'uv' is available to install in Termux now (pkg install uv), but 'pip install uv' doesn't work.
 
 Xiaomi Mi11 rooted with Magisk
 https://droidwin.com/how-to-root-xiaomi-eu-rom-via-magisk/
