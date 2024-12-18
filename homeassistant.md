@@ -119,3 +119,10 @@ except Exception as e:
     print("Error updating IP!")
     print(e)
 ```
+
+## Error loop with aiohttp (self._accept(), Invalid argument)
+Fix:
+- enable "Avanced Mode" for user
+- Settings -> System -> Network -> select Adapter:lo
+- restart hass
+
